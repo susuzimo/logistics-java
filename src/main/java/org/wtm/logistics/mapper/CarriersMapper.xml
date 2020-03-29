@@ -43,9 +43,9 @@
   </select>
   <select id="getAllCarriesByPage" resultMap="BaseResultMap">
     select * from carriers where fk_userID=#{uid}
-    <if test="page!=null and size!=null">
-      limit #{page},#{size}
-    </if>
+    <!--<if test="page!=null and size!=null">-->
+      <!--limit #{page},#{size}-->
+    <!--</if>-->
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 

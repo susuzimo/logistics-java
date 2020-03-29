@@ -1,11 +1,13 @@
 package org.wtm.logistics.mapper;
 
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.wtm.logistics.model.Scheduling;
 
 import java.util.List;
 
+@Mapper
 public interface SchedulingMapper {
     int deleteByPrimaryKey(Integer schedulingid);
 

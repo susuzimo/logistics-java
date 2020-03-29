@@ -1,12 +1,15 @@
 package org.wtm.logistics.mapper;
 
 
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.wtm.logistics.model.Truck;
 
 import java.util.Date;
 import java.util.List;
 
+@Mapper
 public interface TruckMapper {
     int deleteByPrimaryKey(Integer truckid);
 

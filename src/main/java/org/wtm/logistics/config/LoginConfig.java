@@ -34,6 +34,8 @@ public class LoginConfig {
     }
 
 
+
+
     @Bean
     SecurityManager securityManager() {
         DefaultWebSecurityManager manager = new DefaultWebSecurityManager();
@@ -48,8 +50,13 @@ public class LoginConfig {
         bean.setLoginUrl("/login");
         bean.setSuccessUrl("/index");
         Map<String, String> map = new LinkedHashMap<>();
+        map.put("/logout", "logout");   //匿名访问
         map.put("/doLogin", "anon");   //匿名访问
+        map.put("/truck/**", "roles[运输管理员]");
+        map.put("/task/**", "roles[承运业务员]");
+        map.put("/sche/**", "roles[调度员]");
         map.put("/**", "authc");       //登录以后才能访问
+
         bean.setFilterChainDefinitionMap(map);
         return bean;
     }

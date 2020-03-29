@@ -27,7 +27,9 @@ public class LoginController {
         try{
             subject.login(token);
             //subject.getPrincipal()  存放着登录个人信息
-            return RespBean.ok("登录成功",subject.getSession().getAttribute("user"));
+            User user1 = (User) subject.getSession().getAttribute("user");
+            user1.setPassword("");
+            return RespBean.ok("登录成功",user1);
         }catch (AuthenticationException e){
                 System.out.println(e.getMessage());
         }

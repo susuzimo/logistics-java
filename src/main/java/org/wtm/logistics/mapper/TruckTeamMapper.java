@@ -1,13 +1,15 @@
 package org.wtm.logistics.mapper;
 
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.wtm.logistics.model.TruckTeam;
 
 import java.util.List;
 
+@Mapper
 public interface TruckTeamMapper {
-    int deleteByPrimaryKey(Integer teamid);
+    int deleteByPrimaryKey(@Param("teamid") Integer teamid);
 
     int insert(TruckTeam record);
 

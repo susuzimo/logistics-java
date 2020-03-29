@@ -26,8 +26,8 @@
         </association>
     </resultMap>
  <select id="getUserByAccount" resultMap="BaseResultMap2">
-    SELECT u.*,r.* FROM USER u,role r WHERE u.account=#{account} AND u.`fk_roleID`=r.`roleID`
-  </select>
+  SELECT u.*,r.* FROM USER u,role r WHERE u.account=#{account} AND u.`fk_roleID`=r.`roleID`
+</select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

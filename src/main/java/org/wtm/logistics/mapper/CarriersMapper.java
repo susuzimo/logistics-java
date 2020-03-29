@@ -1,10 +1,12 @@
 package org.wtm.logistics.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.wtm.logistics.model.Carriers;
 
 import java.util.List;
 
+@Mapper
 public interface CarriersMapper {
     int deleteByPrimaryKey(Integer carriersid);
 
@@ -20,8 +22,9 @@ public interface CarriersMapper {
 
     Long getTotal(@Param("uid") Integer userid);
 
-    List<Carriers> getAllCarriesByPage(@Param("page") Integer page, @Param("size") Integer size, @Param("uid") Integer userid);
+//    List<Carriers> getAllCarriesByPage(@Param("page") Integer page, @Param("size") Integer size, @Param("uid") Integer userid);
 
+    List<Carriers> getAllCarriesByPage(@Param("uid") Integer userid);
 
     Long getTotal2(Integer state);
 

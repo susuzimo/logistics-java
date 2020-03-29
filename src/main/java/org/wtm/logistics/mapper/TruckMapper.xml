@@ -46,7 +46,10 @@
         SELECT DISTINCT type FROM truck
     </select>
     <select id="getAllTruckByPage" resultMap="BaseResultMap2">
+
         SELECT t.*,tt.`leader`,tt.`remark` AS ttremark,tt.`teamID`,tt.`teamName`,tt.`checkInTime` AS ttcheckInTime FROM truck t ,truckteam tt WHERE t.`fk_teamID`=tt.`teamID`
+
+--         SELECT t.* FROM truck t
         <where>
             <if test="daterange!=null">
                 and t.buyDate between #{daterange[0]} and #{daterange[1]}
